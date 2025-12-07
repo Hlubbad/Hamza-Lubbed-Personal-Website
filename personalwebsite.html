@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home — [Your Name]</title>
+    <meta name="description" content="Personal website — [Your Name]. Projects, about and contact." />
+    <meta name="theme-color" content="#0f172a" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a class="logo" href="index.html">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Hamza Lubbed</span>
+            </a>
+
+            <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+
+            <ul id="main-nav" class="nav-list" role="menu">
+                <li role="none"><a role="menuitem" href="index.html" aria-current="page">Home</a></li>
+                <li role="none"><a role="menuitem" href="about.html">About</a></li>
+                <li role="none"><a role="menuitem" href="projects.html">Projects</a></li>
+                <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="container" role="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <img src="WIN_20251203_20_02_22_Pro.jpg" alt="Profile photo of [Your Name]" class="profile-photo">
+
+            <div>
+                <h1 id="hero-title">Hi — I'm Hamza</h1>
+                <p class="muted">I am a student at <strong>ADA University</strong> from <strong>Palestine</strong>, currently studying Computer Science. 
+    I am honored to be a <strong>Heydar Aliyev Scholarship</strong> recipient.</p>
+
+                <div class="actions" role="group" aria-label="Primary actions">
+                    <a class="btn" href="projects.html">View Projects</a>
+                    <a class="btn ghost" href="about.html">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-projects" aria-labelledby="featured-heading">
+            <h2 id="featured-heading">Featured Projects</h2>
+
+            <div class="projects-grid" role="list">
+                <article class="project-card" role="listitem" aria-labelledby="p1">
+                    <h3 id="p1">Project 1 — Interactive Dashboard</h3>
+                    <p>Data-driven dashboard with performant charts, accessible controls and responsive layout.</p>
+                    <a class="muted" href="projects.html#project-1">View Details →</a>
+                </article>
+
+                <article class="project-card" role="listitem" aria-labelledby="p2">
+                    <h3 id="p2">Project 2 — Learning App</h3>
+                    <p>Small learning app built with accessibility-first components and offline support.</p>
+                    <a class="muted" href="projects.html#optional-project">View Details →</a>
+                </article>
+
+                <article class="project-card" role="listitem" aria-labelledby="p3">
+                    <h3 id="p3">Project 3 — Open Source Tool</h3>
+                    <p>A tiny CLI/utility published on GitHub to automate repetitive tasks.</p>
+                    <a class="muted" href="projects.html#project-3">View Details →</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> [Your Name]. All rights reserved.</p>
+
+            <div class="social-links" aria-label="Social links">
+                <a href="[YOUR GITHUB URL]" aria-label="GitHub Profile" class="social-icon">⚙️ GitHub</a>
+                <a href="[YOUR LINKEDIN URL]" aria-label="LinkedIn Profile" class="social-icon">💼 LinkedIn</a>
+            </div>
+
+            <p class="repo-link"><a href="[YOUR REPOSITORY URL]" class="muted">View Website Repository on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Set year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile nav toggle
+        const btn = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('main-nav');
+        btn?.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('open');
+        });
+
+        // Close mobile nav on +outside click or escape
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !btn.contains(e.target) && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
+                btn.focus();
+            }
+        });
+    </script>
+</body>
+</html>
