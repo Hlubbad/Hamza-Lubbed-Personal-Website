@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | Hamza Lubbed</title>
+    <meta name="description" content="About Hamza Lubbed — Computer Science student at ADA University from Palestine." />
+    <meta name="theme-color" content="#0f172a" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* enable smooth scrolling for in-page anchors */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a class="logo" href="index.html">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Hamza Lubbed</span>
+            </a>
+
+            <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+
+            <ul id="main-nav" class="nav-list" role="menu">
+                <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+                <li role="none"><a role="menuitem" href="about.html" aria-current="page">About</a></li>
+                <li role="none"><a role="menuitem" href="projects.html">Projects</a></li>
+                <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="container" role="main">
+        <section class="hero" aria-labelledby="about-title">
+            <img src="20251204_154317.jpg" alt="Profile photo of Hamza Lubbed" class="profile-photo">
+
+            <div>
+                <h1 id="about-title">My Journey</h1>
+                <p class="muted">I am a Computer Science student at <strong>ADA University</strong> from <strong>Palestine</strong>, passionate about building accessible and user-friendly digital solutions.</p>
+
+                <div class="actions" role="group" aria-label="Primary actions">
+                    <a class="btn" href="#background">Background</a>
+                    <a class="btn ghost" href="#projects-section">Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="background" class="about-section" aria-labelledby="background-heading">
+            <h2 id="background-heading">Background & Qualifications</h2>
+
+            <p>I am a <strong>Computer Science student at ADA University</strong> from <strong>Palestine</strong>, dedicated to developing technical skills and creating meaningful digital experiences.</p>
+
+            <p>I am honored to be a recipient of the <strong>Heydar Aliyev Scholarship</strong>, which recognizes academic excellence and commitment to innovation. This prestigious award has enabled me to pursue advanced studies in computer science and contribute to cutting-edge projects.</p>
+
+            <p>Through my coursework and hands-on projects, I am building a strong foundation in computer science principles, software development, and digital systems design.</p>
+        </section>
+
+        <section id="skills" class="about-section" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Skills & Interests</h2>
+
+            <h3>Technical Skills</h3>
+            <ul>
+                <li><strong>Accessible Web Development</strong> — HTML, CSS, semantic markup and WCAG compliance</li>
+                <li><strong>Version Control</strong> — Git and GitHub for collaborative development</li>
+                <li><strong>AI-Assisted Coding</strong> — Using modern AI tools to improve productivity and code quality</li>
+                <li><strong>Digital Logic</strong> — Hardware design, circuit construction, and truth-table verification</li>
+                <li><strong>Problem Solving</strong> — Analytical thinking and debugging complex systems</li>
+            </ul>
+
+            <h3>Professional Interests</h3>
+            <ul>
+                <li>Front-end design and user experience (UX)</li>
+                <li>Data visualization and interactive dashboards</li>
+                <li>Accessible digital design for inclusive user experiences</li>
+                <li>Hardware-software integration and embedded systems</li>
+                <li>Collaborative team projects and documentation</li>
+            </ul>
+        </section>
+
+        <section id="projects-section" class="about-section" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Conducted Activities & Project Experience</h2>
+
+            <h3>SITE 1101: Principles of Information Systems</h3>
+            <p>My primary activity within the <strong>Principles of Information Systems (SITE 1101)</strong> course was the <strong>Team Project 1: Logic Gates Construction</strong>.</p>
+
+            <h3>My Role & Contribution</h3>
+            <p>I contributed <strong>approximately 25%</strong> to <strong>Team 3</strong>, successfully designing, constructing, and testing the required <strong>NOT, AND, and OR logic gates</strong> using physical electronic components on a solderless breadboard. My responsibilities included:</p>
+
+            <ul>
+                <li>Assembling and wiring circuits on the breadboard</li>
+                <li>Testing circuits against truth-table specifications</li>
+                <li>Troubleshooting signal and component issues</li>
+                <li>Documenting the bonus <strong>NAND and XOR</strong> circuits</li>
+                <li>Collaborating with team members on demonstrations and presentations</li>
+            </ul>
+
+            <p>This project reinforced my understanding of how digital logic is realized in hardware and provided hands-on experience with electronic components such as NPN transistors (PN2222), resistors (330 Ω, 2k Ω), and LEDs for output verification.</p>
+
+            <p class="muted">For more details about this project, <a href="projects.html#project-1">view the full project page</a>.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Hamza Lubbed. All rights reserved.</p>
+
+            <div class="social-links" aria-label="Social links">
+                <a href="https://github.com/Hlubbad" aria-label="GitHub Profile" class="social-icon">⚙️ GitHub</a>
+                <a href="https://www.linkedin.com/in/hamza-lubbad-5b7826389" aria-label="LinkedIn Profile" class="social-icon">💼 LinkedIn</a>
+            </div>
+
+            <p class="repo-link"><a href="https://github.com/Hlubbad/Hamza-Lubbed-Personal-Website" class="muted">View Website Repository on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Set year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile nav toggle
+        const btn = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('main-nav');
+        btn?.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('open');
+        });
+
+        // Close mobile nav on outside click or escape
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !btn.contains(e.target) && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
+                btn.focus();
+            }
+        });
+    </script>
+</body>
+</html>
