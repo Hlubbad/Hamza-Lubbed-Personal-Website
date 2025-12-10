@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects | SITE 1101</title>
+    <meta name="description" content="Project 1: Logic Gates Construction — SITE 1101" />
+    <meta name="theme-color" content="#0f172a" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>html { scroll-behavior: smooth; }</style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a class="logo" href="index.html">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Hamza Lubbed</span>
+            </a>
+
+            <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+
+            <ul id="main-nav" class="nav-list" role="menu">
+                <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+                <li role="none"><a role="menuitem" href="about.html">About</a></li>
+                <li role="none"><a role="menuitem" href="projects.html" aria-current="page">Projects</a></li>
+                <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="container" role="main">
+        <section class="hero" aria-labelledby="project-hero-title">
+            <div>
+                <h1 id="project-hero-title">Project 1 — Logic Gates Construction</h1>
+                <p class="muted">SITE 1101 course project: build and test basic logic gates using discrete components and document functionality with schematics and truth tables.</p>
+                <div class="actions" role="group" aria-label="Primary actions">
+                    <a class="btn" href="#project-1">Project Overview</a>
+                    <a class="btn ghost" href="#visuals">Visuals</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="project-1" class="project-overview" aria-labelledby="overview-heading">
+            <h2 id="overview-heading">Overview</h2>
+
+            <p><strong>Course:</strong> SITE 1101 — Introduction to Digital Logic</p>
+            <p><strong>Project Title:</strong> Logic Gates Construction</p>
+
+            <h3>Objective</h3>
+            <p>Design, build and verify the behaviour of fundamental logic gates (AND, OR, NOT, NAND, NOR, XOR) using discrete electronic components on a breadboard. Demonstrate correct truth-table outputs for all gate combinations and explain gate implementation choices.</p>
+
+            <h3>Materials</h3>
+            <ul>
+                <li>Breadboard and jumper wires</li>
+                <li>TTL logic ICs (74xx family) and/or discrete transistors & resistors</li>
+                <li>LEDs and current-limiting resistors for output indicators</li>
+                <li>5V DC power supply</li>
+                <li>Multimeter and logic probe/oscilloscope (optional)</li>
+            </ul>
+
+            <h3>Methodology</h3>
+            <ol>
+                <li>Select implementation style (IC-based or transistor-level).</li>
+                <li>Create schematic diagrams for each gate and plan breadboard layout.</li>
+                <li>Assemble gates on the breadboard, wire inputs to test switches and outputs to LEDs.</li>
+                <li>Systematically test all input combinations and record outputs.</li>
+                <li>Compare measured outputs to expected truth tables and note discrepancies.</li>
+            </ol>
+
+            <h3>Results & Learning Outcomes</h3>
+            <p>All primary gates (AND, OR, NOT) produced the expected outputs when tested across input combinations. Derivative gates (NAND, NOR, XOR) were implemented and verified. The exercise reinforced practical wiring discipline, propagation delay awareness, and the importance of proper power decoupling and input pull-down/up resistors.</p>
+
+            <p class="muted">Back to <a href="index.html">Home</a> · <a href="#visuals">View Visuals</a></p>
+        </section>
+
+        <section id="visuals" class="project-visuals" aria-labelledby="visuals-heading">
+            <h2 id="visuals-heading">Visuals</h2>
+
+            <div class="projects-grid" role="list">
+                <figure class="project-card" role="listitem">
+                    <img src="logic_gates_breadboard.jpg" alt="Breadboard with built logic gates and LEDs" class="project-image">
+                    <figcaption>Breadboard assembly showing AND, OR and NOT gate implementations with LED outputs.</figcaption>
+                </figure>
+
+                <figure class="project-card" role="listitem">
+                    <img src="logic_schematics.png" alt="Hand-drawn schematics of logic gate circuits" class="project-image">
+                    <figcaption>Schematics used during assembly — IC pinouts and wiring layout.</figcaption>
+                </figure>
+
+                <figure class="project-card" role="listitem">
+                    <img src="truth_tables.png" alt="Truth tables for each implemented logic gate" class="project-image">
+                    <figcaption>Recorded truth tables comparing expected vs measured outputs for each gate.</figcaption>
+                </figure>
+            </div>
+
+            <p class="muted">Images are illustrative; replace placeholders with project photos and scanned schematics.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Hamza Lubbed. All rights reserved.</p>
+
+            <div class="social-links" aria-label="Social links">
+                <a href="https://github.com/Hlubbad" aria-label="GitHub Profile" class="social-icon">⚙️ GitHub</a>
+                <a href="https://www.linkedin.com/in/hamza-lubbad-5b7826389" aria-label="LinkedIn Profile" class="social-icon">💼 LinkedIn</a>
+            </div>
+
+            <p class="repo-link"><a href="https://github.com/Hlubbad/Hamza-Lubbed-Personal-Website" class="muted">View Website Repository on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Set year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile nav toggle
+        const btn = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('main-nav');
+        btn?.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('open');
+        });
+
+        // Close mobile nav on outside click or escape
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !btn.contains(e.target) && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
+                btn.focus();
+            }
+        });
+    </script>
+</body>
+</html>
