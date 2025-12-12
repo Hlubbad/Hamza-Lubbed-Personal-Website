@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Hamza Lubbed</title>
+    <meta name="description" content="Contact Hamza Lubbed — Get in touch for professional inquiries." />
+    <meta name="theme-color" content="#0f172a" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* enable smooth scrolling for in-page anchors */
+        html { scroll-behavior: smooth; }
+
+        /* Center the hero/title and make the action buttons centered */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 0;
+        }
+        .hero > div {
+            max-width: 900px;
+            width: 100%;
+            padding: 0 1rem;
+            text-align: center; /* center the title and paragraph */
+        }
+        .actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Ensure contact sections keep readable line-length */
+        .contact-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Responsive tweak */
+        @media (min-width: 1024px) {
+            .hero { padding: 72px 0; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+        <nav class="navbar container" role="navigation" aria-label="Main navigation">
+            <a class="logo" href="index.html">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Hamza Lubbed</span>
+            </a>
+
+            <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+
+            <ul id="main-nav" class="nav-list" role="menu">
+                <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+                <li role="none"><a role="menuitem" href="about.html">About</a></li>
+                <li role="none"><a role="menuitem" href="projects.html">Projects</a></li>
+                <li role="none"><a role="menuitem" href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="container" role="main">
+        <section class="hero" aria-labelledby="contact-title">
+            <div>
+                <h1 id="contact-title">Connect with Me</h1>
+                <p class="muted">I'm always open to discussing new opportunities, collaborations, or sharing ideas in computer science and technology.</p>
+                <p class="muted"><strong>Email:</strong> <a href="mailto:hlubbed26705@ada.edu.az">hlubbed26705@ada.edu.az</a></p>
+
+                <div class="actions" role="group" aria-label="Contact actions">
+                    <a class="btn" href="#contact-info">Get in Touch</a>
+                    <a class="btn ghost" href="#links">View Profiles</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-info" class="contact-section" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Get in Touch</h2>
+
+            <p>For professional inquiries, collaborations, or academic discussions, email is the best way to reach me. Feel free to send a message about projects, opportunities, or anything related to computer science.</p>
+
+            <p><strong>Email:</strong> <a href="mailto:hlubbed26705@ada.edu.az">hlubbed26705@ada.edu.az</a></p>
+        </section>
+
+        <section id="links" class="contact-section" aria-labelledby="links-heading">
+            <h2 id="links-heading">Professional Profiles</h2>
+
+            <p>Explore my work and learning journey through these platforms:</p>
+
+            <div class="social-links" role="list">
+                <a href="https://github.com/Hlubbad" class="social-icon" role="listitem" aria-label="GitHub Profile">⚙️ GitHub</a>
+                <a href="https://www.codecademy.com/profiles/Lubbed" class="social-icon" role="listitem" aria-label="Codecademy Profile">🎓 Codecademy</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Hamza Lubbed. All rights reserved.</p>
+
+            <div class="social-links" aria-label="Social links">
+                <a href="https://github.com/Hlubbad" aria-label="GitHub Profile" class="social-icon">⚙️ GitHub</a>
+                <a href="https://www.linkedin.com/in/hamza-lubbad-5b7826389" aria-label="LinkedIn Profile" class="social-icon">💼 LinkedIn</a>
+                <a href="https://www.codecademy.com/profiles/Lubbed" aria-label="Codecademy Profile" class="social-icon">🎓 Codecademy</a>
+            </div>
+
+            <p class="repo-link"><a href="https://github.com/Hlubbad/Hamza-Lubbed-Personal-Website" class="muted">View Website Repository on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Set year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile nav toggle
+        const btn = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('main-nav');
+        btn?.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('open');
+        });
+
+        // Close mobile nav on outside click or escape
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !btn.contains(e.target) && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
+                btn.focus();
+            }
+        });
+    </script>
+</body>
+</html>
