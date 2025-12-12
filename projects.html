@@ -144,29 +144,36 @@
     </footer>
 
     <script>
-        // Set year dynamically
-        document.getElementById('year').textContent = new Date().getFullYear();
-        const mainNav = document.getElementById('main-nav');
-        navToggleBtn?.addEventListener('click', () => {
-            const expanded = navToggleBtn.getAttribute('aria-expanded') === 'true';
-            navToggleBtn.setAttribute('aria-expanded', String(!expanded));
-            mainNav.classList.toggle('open');
+    // Set year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle (using the same variable names as index.html)
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('main-nav');
+    
+    // Check if the button exists before attaching the listener
+    if (btn && nav) {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('open'); // Toggles the 'open' class on the menu
         });
 
         // Close mobile nav on outside click or escape
         document.addEventListener('click', (e) => {
-            if (!mainNav.contains(e.target) && !navToggleBtn.contains(e.target) && mainNav.classList.contains('open')) {
-                mainNav.classList.remove('open');
-                navToggleBtn.setAttribute('aria-expanded','false');
+            if (!nav.contains(e.target) && !btn.contains(e.target) && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
             }
         });
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mainNav.classList.contains('open')) {
-                mainNav.classList.remove('open');
-                navToggleBtn.setAttribute('aria-expanded','false');
-                navToggleBtn.focus();
+            if (e.key === 'Escape' && nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
+                btn.focus();
             }
         });
-    </script>
+    }
+</script>
 </body>
 </html>
